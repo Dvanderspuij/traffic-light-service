@@ -5,20 +5,30 @@ SET FOREIGN_KEY_CHECKS=0;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
 
--- Database: `trafficlight`
---
-
 DELIMITER ;
--- --------------------------------------------------------
 
---
--- Table structure for table `events`
---
+CREATE TABLE IF NOT EXISTS devices (
+  device_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  ip VARCHAR(16) NOT NULL,
+  name VARCHAR(50) NOT NULL,
+  PRIMARY KEY (device_id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 CREATE TABLE IF NOT EXISTS events (
-  sequence BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  event JSON NOT NULL,
-  PRIMARY KEY (sequence)
+  event_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  event VARCHAR(30) NOT NULL,
+  score INT,
+  datetime DATETIME NOT NULL,
+  PRIMARY KEY (event_id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+
+CREATE TABLE IF NOT EXISTS device_state (
+  device_state_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  device_id BIGINT UNSIGNED NOT NULL,
+  state JSON NOT NULL,
+  datetime DATETIME NOT NULL,
+  PRIMARY KEY (device_state_id),
+  CONSTRAINT `device_id_fk` FOREIGN KEY (`device_id`) REFERENCES `devices` (`device_id`)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
 
 SET FOREIGN_KEY_CHECKS=1;
