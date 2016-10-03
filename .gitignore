@@ -1,0 +1,8 @@
+# Operating system files
+.DS_Store
+
+# Node
+node_modules
+log
+error.log
+npm-debug.log

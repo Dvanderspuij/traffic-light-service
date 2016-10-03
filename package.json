@@ -1,0 +1,20 @@
+{
+  "name": "trafficlight-service",
+  "version": "0.1.0",
+  "description": "Service component for the MP3 Arduino traffic light",
+  "engines": {
+    "node": ">=6.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardregeer/traffic-light-service.git"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "bluebird": "^3.4.5",
+    "knex": "^0.11.10",
+    "mysql": "2.11.1",
+    "lodash": "^4.15.0"
+  },
+  "private": true
+}
