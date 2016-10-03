@@ -1,0 +1,9 @@
+{
+  "database": {
+    "host": "127.0.0.1",
+    "database": "trafficlight",
+    "port": 3308,
+    "user": "root",
+    "password": ""
+  }
+}
